@@ -11,11 +11,23 @@ npm install @socialler/rn-three-column-layout
 ## Usage
 
 ```js
-import { multiply } from '@socialler/rn-three-column-layout';
+import React from 'react';
+import { ThreeColumnLayout, View } from '@socialler/rn-three-column-layout';
 
-// ...
+const MyComponent = () => {
+  return (
+    <ThreeColumnLayout
+      leftWidth={200} // Adjust width as needed
+      middleWidth={300} // Adjust width as needed
+    >
+      <View style={{ backgroundColor: 'red' }}>Left Column</View>
+      <View style={{ backgroundColor: 'yellow' }}>Middle Column</View>
+      <View style={{ backgroundColor: 'blue' }}>Right Column</View>
+    </ThreeColumnLayout>
+  );
+};
 
-const result = await multiply(3, 7);
+export default MyComponent;
 ```
 
 ## Contributing
@@ -28,4 +40,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Special thanks to craftzdog, this repo is a clone of their repo, but we improved some things.

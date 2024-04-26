@@ -87,10 +87,10 @@ const ThreeColumnLayout: React.FC<Props> = ({
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.columnContainer, animatedLeftViewStyle]}>
-        <View style={{ flex: 1 }}>{renderLeftView(viewProps)}</View>
+        <View style={styles.flex}>{renderLeftView(viewProps)}</View>
       </Animated.View>
       <Animated.View style={[styles.columnContainer, animatedMiddleViewStyle]}>
-        <View style={{ flex: 1 }}>{renderMiddleView(viewProps)}</View>
+        <View style={styles.flex}>{renderMiddleView(viewProps)}</View>
       </Animated.View>
       <View style={styles.columnContainer}>
         {renderRightView(viewProps)}
@@ -105,6 +105,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
+  },
+  flex: {
+    flex: 1,
   },
   columnContainer: {
     flexShrink: 0,

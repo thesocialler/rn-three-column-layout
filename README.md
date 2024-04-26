@@ -5,14 +5,14 @@
 ## Installation
 
 ```sh
-npm install @socialler/rn-three-column-layout
+npm install rn-three-column-layout
 ```
 
 ## Usage
 
 ```js
 import React from 'react';
-import { ThreeColumnLayout, View } from '@socialler/rn-three-column-layout';
+import { ThreeColumnLayout, View } from 'rn-three-column-layout';
 
 const MyComponent = () => {
   return (

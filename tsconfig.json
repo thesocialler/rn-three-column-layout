@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@socialler/rn-three-column-layout": ["./src/index"]
+      "rn-three-column-layout": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

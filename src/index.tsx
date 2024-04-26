@@ -30,8 +30,12 @@ const ThreeColumnLayout: React.FC<Props> = ({
   const [leftVisible, setLeftVisible] = useState(defaultLeftVisible);
   const [middleVisible, setMiddleVisible] = useState(defaultMiddleVisible);
 
-  const leftValue = useRef(new Animated.Value(leftVisible ? leftWidth : 0)).current;
-  const middleValue = useRef(new Animated.Value(middleVisible ? middleWidth : 0)).current;
+  const leftValue = useRef(
+    new Animated.Value(leftVisible ? leftWidth : 0)
+  ).current;
+  const middleValue = useRef(
+    new Animated.Value(middleVisible ? middleWidth : 0)
+  ).current;
 
   const animatedLeftViewStyle = {
     width: leftValue,
@@ -41,31 +45,25 @@ const ThreeColumnLayout: React.FC<Props> = ({
     width: middleValue,
   };
 
-  const toggleLeftView = useCallback(
-    () => {
-      const toValue = leftVisible ? 0 : leftWidth;
-      setLeftVisible(!leftVisible);
-      Animated.spring(leftValue, {
-        useNativeDriver: false,
-        toValue,
-        bounciness: 0,
-      }).start();
-    },
-    [leftValue, leftVisible, leftWidth]
-  );
+  const toggleLeftView = useCallback(() => {
+    const toValue = leftVisible ? 0 : leftWidth;
+    setLeftVisible(!leftVisible);
+    Animated.spring(leftValue, {
+      useNativeDriver: false,
+      toValue,
+      bounciness: 0,
+    }).start();
+  }, [leftValue, leftVisible, leftWidth]);
 
-  const toggleMiddleView = useCallback(
-    () => {
-      const toValue = middleVisible ? 0 : middleWidth;
-      setMiddleVisible(!middleVisible);
-      Animated.spring(middleValue, {
-        useNativeDriver: false,
-        bounciness: 0,
-        toValue,
-      }).start();
-    },
-    [middleValue, middleVisible, middleWidth]
-  );
+  const toggleMiddleView = useCallback(() => {
+    const toValue = middleVisible ? 0 : middleWidth;
+    setMiddleVisible(!middleVisible);
+    Animated.spring(middleValue, {
+      useNativeDriver: false,
+      bounciness: 0,
+      toValue,
+    }).start();
+  }, [middleValue, middleVisible, middleWidth]);
 
   useEffect(() => {
     if (leftVisible !== defaultLeftVisible) {
@@ -92,9 +90,7 @@ const ThreeColumnLayout: React.FC<Props> = ({
       <Animated.View style={[styles.columnContainer, animatedMiddleViewStyle]}>
         <View style={styles.flex}>{renderMiddleView(viewProps)}</View>
       </Animated.View>
-      <View style={styles.columnContainer}>
-        {renderRightView(viewProps)}
-      </View>
+      <View style={styles.columnContainer}>{renderRightView(viewProps)}</View>
     </View>
   );
 };

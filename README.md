@@ -11,23 +11,35 @@ npm install rn-three-column-layout
 ## Usage
 
 ```js
-import React from 'react';
-import { ThreeColumnLayout, View } from 'rn-three-column-layout';
 
-const MyComponent = () => {
-  return (
-    <ThreeColumnLayout
-      leftWidth={200} // Adjust width as needed
-      middleWidth={300} // Adjust width as needed
-    >
-      <View style={{ backgroundColor: 'red' }}>Left Column</View>
-      <View style={{ backgroundColor: 'yellow' }}>Middle Column</View>
-      <View style={{ backgroundColor: 'blue' }}>Right Column</View>
-    </ThreeColumnLayout>
-  );
-};
+import * as React from 'react';
+import { StyleSheet, View } from 'react-native';
+import ThreeColumnLayout from 'rn-three-column-layout';
 
-export default MyComponent;
+export default function App() {
+  <ThreeColumnLayout
+    renderLeftView={() => <View style={[styles.box, styles.leftColumn]} />}
+    renderMiddleView={() => <View style={[styles.box, styles.middleColumn]} />}
+    renderRightView={() => <View style={[styles.box, styles.rightColumn]} />}
+  />;
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  box: {
+    flex: 1,
+  },
+  leftColumn: { backgroundColor: 'red' },
+  middleColumn: { backgroundColor: 'yellow' },
+  rightColumn: { backgroundColor: 'blue' },
+});
+
+
+
 ```
 
 ## Contributing

@@ -1,6 +1,6 @@
 {
   "name": "rn-three-column-layout",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "rn-three-column-layout is a specialized React Native library that simplifies the creation of three-column layouts for mobile applications. This library enables easy division of screen space into three equal parts, providing an intuitive and efficient user experience. Ideal for developers looking to optimize content distribution in their mobile applications.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
